@@ -5,11 +5,12 @@ from typing import Dict
 
 
 ERRORS: Dict[int, str] = {
-    1:'Введите сумму USD',
-    2:'Введите одно значение',
-    3:'Введите корректную сумму USD',
-    4:'Введите положительную сумму USD',
+    1: 'Введите сумму USD',
+    2: 'Введите одно значение',
+    3: 'Введите корректную сумму USD',
+    4: 'Введите положительную сумму USD',
 }
+
 
 def isfloat(value):
     try:
@@ -17,6 +18,7 @@ def isfloat(value):
         return True
     except ValueError:
         return False
+
 
 def output(output_string: str, is_error: bool = False):
     FORMAT = '%(asctime)s - %(name)s - %(levelname)s - %(message)s'
@@ -31,6 +33,7 @@ def output(output_string: str, is_error: bool = False):
 
 class CurrencyConverter:
     ACCURACY = 2
+
     def __init__(self):
         self._usd_rate = requests.get(
                         'https://www.cbr-xml-daily.ru/daily_json.js'
