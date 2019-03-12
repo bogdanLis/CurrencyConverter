@@ -63,8 +63,8 @@ def main(cli_args):
         usd_amount = cli_args[1]
         if not isfloat(usd_amount):
             error_code = 3
-        if not float(usd_amount) >= 0:
-            error_code = 4
+            if not float(usd_amount) >= 0:
+                error_code = 4
     if error_code == 0:
         converter = CurrencyConverter()
         output('{} RUB'.format(converter.calculate(float(usd_amount))))
