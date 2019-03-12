@@ -21,6 +21,12 @@ def isfloat(value):
 
 
 def output(output_string: str, is_error: bool = False):
+    '''
+        Метод для вывода информации в консоль. Также осуществляет логгирование.
+        Keyword arguments:
+        output_string - сформированная строка для вывода вользователю
+        is_error - флаг наличия ошибки 
+    '''
     FORMAT = '%(asctime)s - %(name)s - %(levelname)s - %(message)s'
     logging.basicConfig(filename="converter.log", format=FORMAT)
     if is_error:
@@ -32,6 +38,10 @@ def output(output_string: str, is_error: bool = False):
 
 
 class CurrencyConverter:
+    '''
+        Конвертер валют USD -> RUB
+        Актуальный курс по ЦБ подгружается при инициализации
+    '''
     ACCURACY = 2
 
     def __init__(self):
